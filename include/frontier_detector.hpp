@@ -37,7 +37,7 @@
 #include <experimental/filesystem>
 #include <set>
 
-#include "frontier_point.hpp"
+//#include "frontier_point.hpp"
 
 // global path planner
 //#include "navigation/costmap_2d/include/costmap_2d/costmap_2d.h"
@@ -183,7 +183,7 @@ public:
 //	}
 
 	void saveGridmap( string filename, const nav_msgs::OccupancyGrid &mapData );
-	void saveFrontierCandidates( string filename, vector<FrontierPoint> voFrontierCandidates );
+//	void saveFrontierCandidates( string filename, vector<FrontierPoint> voFrontierCandidates );
 
 protected:
 
@@ -218,7 +218,7 @@ protected:
 	int m_globalcostmap_cols ;
 
 	geometry_msgs::PoseWithCovarianceStamped m_bestgoal ;
-	set<pointset, pointset> m_unreachable_frontier_set ;
+//	set<pointset, pointset> m_unreachable_frontier_set ;
 
 	// thrs
 	//float	m_costmap_conf_thr ;

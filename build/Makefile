@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hankm/binary_ws/mpbb_tests
+CMAKE_SOURCE_DIR = /home/hankm/binary_ws/global_planner
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hankm/binary_ws/mpbb_tests/build
+CMAKE_BINARY_DIR = /home/hankm/binary_ws/global_planner/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hankm/binary_ws/mpbb_tests/build/CMakeFiles /home/hankm/binary_ws/mpbb_tests/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hankm/binary_ws/global_planner/build/CMakeFiles /home/hankm/binary_ws/global_planner/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hankm/binary_ws/mpbb_tests/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hankm/binary_ws/global_planner/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,57 +111,57 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named mpbb_run
+# Target rules for targets named single_plan_run
 
 # Build rule for target.
-mpbb_run: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mpbb_run
-.PHONY : mpbb_run
+single_plan_run: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 single_plan_run
+.PHONY : single_plan_run
 
 # fast build rule for target.
-mpbb_run/fast:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/build
-.PHONY : mpbb_run/fast
+single_plan_run/fast:
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/build
+.PHONY : single_plan_run/fast
 
 #=============================================================================
-# Target rules for targets named mpbb
+# Target rules for targets named myplanner
 
 # Build rule for target.
-mpbb: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mpbb
-.PHONY : mpbb
+myplanner: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 myplanner
+.PHONY : myplanner
 
 # fast build rule for target.
-mpbb/fast:
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/build
-.PHONY : mpbb/fast
+myplanner/fast:
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/build
+.PHONY : myplanner/fast
 
-example/mpbb_run.o: example/mpbb_run.cpp.o
+example/single_plan_run.o: example/single_plan_run.cpp.o
 
-.PHONY : example/mpbb_run.o
+.PHONY : example/single_plan_run.o
 
 # target to build an object file
-example/mpbb_run.cpp.o:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/example/mpbb_run.cpp.o
-.PHONY : example/mpbb_run.cpp.o
+example/single_plan_run.cpp.o:
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/example/single_plan_run.cpp.o
+.PHONY : example/single_plan_run.cpp.o
 
-example/mpbb_run.i: example/mpbb_run.cpp.i
+example/single_plan_run.i: example/single_plan_run.cpp.i
 
-.PHONY : example/mpbb_run.i
+.PHONY : example/single_plan_run.i
 
 # target to preprocess a source file
-example/mpbb_run.cpp.i:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/example/mpbb_run.cpp.i
-.PHONY : example/mpbb_run.cpp.i
+example/single_plan_run.cpp.i:
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/example/single_plan_run.cpp.i
+.PHONY : example/single_plan_run.cpp.i
 
-example/mpbb_run.s: example/mpbb_run.cpp.s
+example/single_plan_run.s: example/single_plan_run.cpp.s
 
-.PHONY : example/mpbb_run.s
+.PHONY : example/single_plan_run.s
 
 # target to generate assembly for a file
-example/mpbb_run.cpp.s:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/example/mpbb_run.cpp.s
-.PHONY : example/mpbb_run.cpp.s
+example/single_plan_run.cpp.s:
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/example/single_plan_run.cpp.s
+.PHONY : example/single_plan_run.cpp.s
 
 src/costmap_2d/src/array_parser.o: src/costmap_2d/src/array_parser.cpp.o
 
@@ -169,8 +169,8 @@ src/costmap_2d/src/array_parser.o: src/costmap_2d/src/array_parser.cpp.o
 
 # target to build an object file
 src/costmap_2d/src/array_parser.cpp.o:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/costmap_2d/src/array_parser.cpp.o
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/costmap_2d/src/array_parser.cpp.o
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/costmap_2d/src/array_parser.cpp.o
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/costmap_2d/src/array_parser.cpp.o
 .PHONY : src/costmap_2d/src/array_parser.cpp.o
 
 src/costmap_2d/src/array_parser.i: src/costmap_2d/src/array_parser.cpp.i
@@ -179,8 +179,8 @@ src/costmap_2d/src/array_parser.i: src/costmap_2d/src/array_parser.cpp.i
 
 # target to preprocess a source file
 src/costmap_2d/src/array_parser.cpp.i:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/costmap_2d/src/array_parser.cpp.i
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/costmap_2d/src/array_parser.cpp.i
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/costmap_2d/src/array_parser.cpp.i
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/costmap_2d/src/array_parser.cpp.i
 .PHONY : src/costmap_2d/src/array_parser.cpp.i
 
 src/costmap_2d/src/array_parser.s: src/costmap_2d/src/array_parser.cpp.s
@@ -189,8 +189,8 @@ src/costmap_2d/src/array_parser.s: src/costmap_2d/src/array_parser.cpp.s
 
 # target to generate assembly for a file
 src/costmap_2d/src/array_parser.cpp.s:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/costmap_2d/src/array_parser.cpp.s
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/costmap_2d/src/array_parser.cpp.s
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/costmap_2d/src/array_parser.cpp.s
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/costmap_2d/src/array_parser.cpp.s
 .PHONY : src/costmap_2d/src/array_parser.cpp.s
 
 src/costmap_2d/src/costmap_2d.o: src/costmap_2d/src/costmap_2d.cpp.o
@@ -199,8 +199,8 @@ src/costmap_2d/src/costmap_2d.o: src/costmap_2d/src/costmap_2d.cpp.o
 
 # target to build an object file
 src/costmap_2d/src/costmap_2d.cpp.o:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/costmap_2d/src/costmap_2d.cpp.o
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/costmap_2d/src/costmap_2d.cpp.o
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/costmap_2d/src/costmap_2d.cpp.o
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/costmap_2d/src/costmap_2d.cpp.o
 .PHONY : src/costmap_2d/src/costmap_2d.cpp.o
 
 src/costmap_2d/src/costmap_2d.i: src/costmap_2d/src/costmap_2d.cpp.i
@@ -209,8 +209,8 @@ src/costmap_2d/src/costmap_2d.i: src/costmap_2d/src/costmap_2d.cpp.i
 
 # target to preprocess a source file
 src/costmap_2d/src/costmap_2d.cpp.i:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/costmap_2d/src/costmap_2d.cpp.i
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/costmap_2d/src/costmap_2d.cpp.i
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/costmap_2d/src/costmap_2d.cpp.i
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/costmap_2d/src/costmap_2d.cpp.i
 .PHONY : src/costmap_2d/src/costmap_2d.cpp.i
 
 src/costmap_2d/src/costmap_2d.s: src/costmap_2d/src/costmap_2d.cpp.s
@@ -219,8 +219,8 @@ src/costmap_2d/src/costmap_2d.s: src/costmap_2d/src/costmap_2d.cpp.s
 
 # target to generate assembly for a file
 src/costmap_2d/src/costmap_2d.cpp.s:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/costmap_2d/src/costmap_2d.cpp.s
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/costmap_2d/src/costmap_2d.cpp.s
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/costmap_2d/src/costmap_2d.cpp.s
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/costmap_2d/src/costmap_2d.cpp.s
 .PHONY : src/costmap_2d/src/costmap_2d.cpp.s
 
 src/costmap_2d/src/costmap_math.o: src/costmap_2d/src/costmap_math.cpp.o
@@ -229,8 +229,8 @@ src/costmap_2d/src/costmap_math.o: src/costmap_2d/src/costmap_math.cpp.o
 
 # target to build an object file
 src/costmap_2d/src/costmap_math.cpp.o:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/costmap_2d/src/costmap_math.cpp.o
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/costmap_2d/src/costmap_math.cpp.o
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/costmap_2d/src/costmap_math.cpp.o
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/costmap_2d/src/costmap_math.cpp.o
 .PHONY : src/costmap_2d/src/costmap_math.cpp.o
 
 src/costmap_2d/src/costmap_math.i: src/costmap_2d/src/costmap_math.cpp.i
@@ -239,8 +239,8 @@ src/costmap_2d/src/costmap_math.i: src/costmap_2d/src/costmap_math.cpp.i
 
 # target to preprocess a source file
 src/costmap_2d/src/costmap_math.cpp.i:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/costmap_2d/src/costmap_math.cpp.i
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/costmap_2d/src/costmap_math.cpp.i
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/costmap_2d/src/costmap_math.cpp.i
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/costmap_2d/src/costmap_math.cpp.i
 .PHONY : src/costmap_2d/src/costmap_math.cpp.i
 
 src/costmap_2d/src/costmap_math.s: src/costmap_2d/src/costmap_math.cpp.s
@@ -249,8 +249,8 @@ src/costmap_2d/src/costmap_math.s: src/costmap_2d/src/costmap_math.cpp.s
 
 # target to generate assembly for a file
 src/costmap_2d/src/costmap_math.cpp.s:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/costmap_2d/src/costmap_math.cpp.s
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/costmap_2d/src/costmap_math.cpp.s
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/costmap_2d/src/costmap_math.cpp.s
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/costmap_2d/src/costmap_math.cpp.s
 .PHONY : src/costmap_2d/src/costmap_math.cpp.s
 
 src/frontier_detector.o: src/frontier_detector.cpp.o
@@ -259,8 +259,8 @@ src/frontier_detector.o: src/frontier_detector.cpp.o
 
 # target to build an object file
 src/frontier_detector.cpp.o:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/frontier_detector.cpp.o
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/frontier_detector.cpp.o
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/frontier_detector.cpp.o
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/frontier_detector.cpp.o
 .PHONY : src/frontier_detector.cpp.o
 
 src/frontier_detector.i: src/frontier_detector.cpp.i
@@ -269,8 +269,8 @@ src/frontier_detector.i: src/frontier_detector.cpp.i
 
 # target to preprocess a source file
 src/frontier_detector.cpp.i:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/frontier_detector.cpp.i
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/frontier_detector.cpp.i
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/frontier_detector.cpp.i
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/frontier_detector.cpp.i
 .PHONY : src/frontier_detector.cpp.i
 
 src/frontier_detector.s: src/frontier_detector.cpp.s
@@ -279,8 +279,8 @@ src/frontier_detector.s: src/frontier_detector.cpp.s
 
 # target to generate assembly for a file
 src/frontier_detector.cpp.s:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/frontier_detector.cpp.s
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/frontier_detector.cpp.s
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/frontier_detector.cpp.s
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/frontier_detector.cpp.s
 .PHONY : src/frontier_detector.cpp.s
 
 src/frontier_detector_dms.o: src/frontier_detector_dms.cpp.o
@@ -289,8 +289,8 @@ src/frontier_detector_dms.o: src/frontier_detector_dms.cpp.o
 
 # target to build an object file
 src/frontier_detector_dms.cpp.o:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/frontier_detector_dms.cpp.o
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/frontier_detector_dms.cpp.o
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/frontier_detector_dms.cpp.o
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/frontier_detector_dms.cpp.o
 .PHONY : src/frontier_detector_dms.cpp.o
 
 src/frontier_detector_dms.i: src/frontier_detector_dms.cpp.i
@@ -299,8 +299,8 @@ src/frontier_detector_dms.i: src/frontier_detector_dms.cpp.i
 
 # target to preprocess a source file
 src/frontier_detector_dms.cpp.i:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/frontier_detector_dms.cpp.i
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/frontier_detector_dms.cpp.i
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/frontier_detector_dms.cpp.i
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/frontier_detector_dms.cpp.i
 .PHONY : src/frontier_detector_dms.cpp.i
 
 src/frontier_detector_dms.s: src/frontier_detector_dms.cpp.s
@@ -309,39 +309,9 @@ src/frontier_detector_dms.s: src/frontier_detector_dms.cpp.s
 
 # target to generate assembly for a file
 src/frontier_detector_dms.cpp.s:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/frontier_detector_dms.cpp.s
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/frontier_detector_dms.cpp.s
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/frontier_detector_dms.cpp.s
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/frontier_detector_dms.cpp.s
 .PHONY : src/frontier_detector_dms.cpp.s
-
-src/frontier_filter.o: src/frontier_filter.cpp.o
-
-.PHONY : src/frontier_filter.o
-
-# target to build an object file
-src/frontier_filter.cpp.o:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/frontier_filter.cpp.o
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/frontier_filter.cpp.o
-.PHONY : src/frontier_filter.cpp.o
-
-src/frontier_filter.i: src/frontier_filter.cpp.i
-
-.PHONY : src/frontier_filter.i
-
-# target to preprocess a source file
-src/frontier_filter.cpp.i:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/frontier_filter.cpp.i
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/frontier_filter.cpp.i
-.PHONY : src/frontier_filter.cpp.i
-
-src/frontier_filter.s: src/frontier_filter.cpp.s
-
-.PHONY : src/frontier_filter.s
-
-# target to generate assembly for a file
-src/frontier_filter.cpp.s:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/frontier_filter.cpp.s
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/frontier_filter.cpp.s
-.PHONY : src/frontier_filter.cpp.s
 
 src/global_planning_handler.o: src/global_planning_handler.cpp.o
 
@@ -349,8 +319,8 @@ src/global_planning_handler.o: src/global_planning_handler.cpp.o
 
 # target to build an object file
 src/global_planning_handler.cpp.o:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/global_planning_handler.cpp.o
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/global_planning_handler.cpp.o
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/global_planning_handler.cpp.o
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/global_planning_handler.cpp.o
 .PHONY : src/global_planning_handler.cpp.o
 
 src/global_planning_handler.i: src/global_planning_handler.cpp.i
@@ -359,8 +329,8 @@ src/global_planning_handler.i: src/global_planning_handler.cpp.i
 
 # target to preprocess a source file
 src/global_planning_handler.cpp.i:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/global_planning_handler.cpp.i
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/global_planning_handler.cpp.i
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/global_planning_handler.cpp.i
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/global_planning_handler.cpp.i
 .PHONY : src/global_planning_handler.cpp.i
 
 src/global_planning_handler.s: src/global_planning_handler.cpp.s
@@ -369,8 +339,8 @@ src/global_planning_handler.s: src/global_planning_handler.cpp.s
 
 # target to generate assembly for a file
 src/global_planning_handler.cpp.s:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/global_planning_handler.cpp.s
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/global_planning_handler.cpp.s
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/global_planning_handler.cpp.s
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/global_planning_handler.cpp.s
 .PHONY : src/global_planning_handler.cpp.s
 
 src/navfn.o: src/navfn.cpp.o
@@ -379,8 +349,8 @@ src/navfn.o: src/navfn.cpp.o
 
 # target to build an object file
 src/navfn.cpp.o:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/navfn.cpp.o
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/navfn.cpp.o
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/navfn.cpp.o
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/navfn.cpp.o
 .PHONY : src/navfn.cpp.o
 
 src/navfn.i: src/navfn.cpp.i
@@ -389,8 +359,8 @@ src/navfn.i: src/navfn.cpp.i
 
 # target to preprocess a source file
 src/navfn.cpp.i:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/navfn.cpp.i
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/navfn.cpp.i
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/navfn.cpp.i
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/navfn.cpp.i
 .PHONY : src/navfn.cpp.i
 
 src/navfn.s: src/navfn.cpp.s
@@ -399,39 +369,9 @@ src/navfn.s: src/navfn.cpp.s
 
 # target to generate assembly for a file
 src/navfn.cpp.s:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/navfn.cpp.s
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/navfn.cpp.s
+	$(MAKE) -f CMakeFiles/single_plan_run.dir/build.make CMakeFiles/single_plan_run.dir/src/navfn.cpp.s
+	$(MAKE) -f CMakeFiles/myplanner.dir/build.make CMakeFiles/myplanner.dir/src/navfn.cpp.s
 .PHONY : src/navfn.cpp.s
-
-src/thread_utility_meas.o: src/thread_utility_meas.cpp.o
-
-.PHONY : src/thread_utility_meas.o
-
-# target to build an object file
-src/thread_utility_meas.cpp.o:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/thread_utility_meas.cpp.o
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/thread_utility_meas.cpp.o
-.PHONY : src/thread_utility_meas.cpp.o
-
-src/thread_utility_meas.i: src/thread_utility_meas.cpp.i
-
-.PHONY : src/thread_utility_meas.i
-
-# target to preprocess a source file
-src/thread_utility_meas.cpp.i:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/thread_utility_meas.cpp.i
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/thread_utility_meas.cpp.i
-.PHONY : src/thread_utility_meas.cpp.i
-
-src/thread_utility_meas.s: src/thread_utility_meas.cpp.s
-
-.PHONY : src/thread_utility_meas.s
-
-# target to generate assembly for a file
-src/thread_utility_meas.cpp.s:
-	$(MAKE) -f CMakeFiles/mpbb_run.dir/build.make CMakeFiles/mpbb_run.dir/src/thread_utility_meas.cpp.s
-	$(MAKE) -f CMakeFiles/mpbb.dir/build.make CMakeFiles/mpbb.dir/src/thread_utility_meas.cpp.s
-.PHONY : src/thread_utility_meas.cpp.s
 
 # Help Target
 help:
@@ -441,11 +381,11 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... mpbb_run"
-	@echo "... mpbb"
-	@echo "... example/mpbb_run.o"
-	@echo "... example/mpbb_run.i"
-	@echo "... example/mpbb_run.s"
+	@echo "... single_plan_run"
+	@echo "... myplanner"
+	@echo "... example/single_plan_run.o"
+	@echo "... example/single_plan_run.i"
+	@echo "... example/single_plan_run.s"
 	@echo "... src/costmap_2d/src/array_parser.o"
 	@echo "... src/costmap_2d/src/array_parser.i"
 	@echo "... src/costmap_2d/src/array_parser.s"
@@ -461,18 +401,12 @@ help:
 	@echo "... src/frontier_detector_dms.o"
 	@echo "... src/frontier_detector_dms.i"
 	@echo "... src/frontier_detector_dms.s"
-	@echo "... src/frontier_filter.o"
-	@echo "... src/frontier_filter.i"
-	@echo "... src/frontier_filter.s"
 	@echo "... src/global_planning_handler.o"
 	@echo "... src/global_planning_handler.i"
 	@echo "... src/global_planning_handler.s"
 	@echo "... src/navfn.o"
 	@echo "... src/navfn.i"
 	@echo "... src/navfn.s"
-	@echo "... src/thread_utility_meas.o"
-	@echo "... src/thread_utility_meas.i"
-	@echo "... src/thread_utility_meas.s"
 .PHONY : help
 
 

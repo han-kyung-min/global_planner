@@ -1,0 +1,5 @@
+../data/costmap0004.txt
+../data/cminfo0004.txt
+./outplan.txt
+254 
+35

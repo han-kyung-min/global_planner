@@ -10,10 +10,10 @@
 
 #include <chrono>
 #include <time.h>
-#include "thread_utility_meas.hpp"
+
 #include "frontier_detector.hpp"
-#include "frontier_point.hpp"
-#include "frontier_filter.hpp"
+//#include "frontier_point.hpp"
+//#include "frontier_filter.hpp"
 #include "global_planning_handler.hpp"
 #include <omp.h>
 #include <visualization_msgs/Marker.h>
@@ -48,6 +48,7 @@ public:
 
 	void loadFrontierPoints(   const string& strfrontierfilename, nav_msgs::Path& frontierpoints  ) ;
 	void planToFrontierPoints( const int nframeidx, const nav_msgs::Path& msg_frontierpoints   );
+	bool planToGoal( const cv::Point2f& goal_w, std::vector<geometry_msgs::PoseStamped>& plan ) ;
 
 	void setCostMap(const string& costmapfile);
 	void setGridMap(const string& gridmapfile);
@@ -77,7 +78,7 @@ protected:
 
 	cv::Mat m_uMapImg, m_uMapImgROI ;
 
-	FrontierFilter m_oFrontierFilter;
+	//FrontierFilter m_oFrontierFilter;
 
 	//GlobalPlanningHandler* mpo_gph ;
 
@@ -87,17 +88,15 @@ protected:
 	uint8_t* mp_cost_translation_table;
 
 	ofstream m_ofs_time ;
-private:
-	std::mutex mutex_robot_state;
-	std::mutex mutex_unreachable_points;
-	std::mutex mutex_gridmap;
-	std::mutex mutex_costmap;
-	std::mutex mutex_upperbound;
-	std::mutex mutex_timing_profile;
+//private:
+//	std::mutex mutex_robot_state;
+//	std::mutex mutex_unreachable_points;
+//	std::mutex mutex_gridmap;
+//	std::mutex mutex_costmap;
+//	std::mutex mutex_upperbound;
+//	std::mutex mutex_timing_profile;
 
-	omp_lock_t m_mplock;
 
-	ThreadUtilityMeas* mp_threadutil; ;
 };
 
 }

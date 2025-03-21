@@ -17,30 +17,26 @@ RM := rm -rf
 -include build/CMakeFiles/mpbb.dir/src/costmap_2d/src/subdir.mk
 -include build/CMakeFiles/mpbb.dir/src/subdir.mk
 -include build/CMakeFiles/FindOpenMP/subdir.mk
--include build/CMakeFiles/3.10.2/CompilerIdCXX/subdir.mk
--include build/CMakeFiles/3.10.2/CompilerIdC/subdir.mk
--include build/CMakeFiles/subdir.mk
--include subdir.mk
--include objects.mk
-
+-include build/CMakeFiles/3.16.3/CompilerIdCXX/subdir.mk
+-include build/CMakeFiles/3.16.3/CompilerIdC/subdir.mk
 ifneq ($(MAKECMDGOALS),clean)
-ifneq ($(strip $(CC_DEPS)),)
--include $(CC_DEPS)
-endif
 ifneq ($(strip $(C++_DEPS)),)
 -include $(C++_DEPS)
 endif
-ifneq ($(strip $(C_UPPER_DEPS)),)
--include $(C_UPPER_DEPS)
-endif
-ifneq ($(strip $(CXX_DEPS)),)
--include $(CXX_DEPS)
+ifneq ($(strip $(CC_DEPS)),)
+-include $(CC_DEPS)
 endif
 ifneq ($(strip $(CPP_DEPS)),)
 -include $(CPP_DEPS)
 endif
+ifneq ($(strip $(CXX_DEPS)),)
+-include $(CXX_DEPS)
+endif
 ifneq ($(strip $(C_DEPS)),)
 -include $(C_DEPS)
+endif
+ifneq ($(strip $(C_UPPER_DEPS)),)
+-include $(C_UPPER_DEPS)
 endif
 endif
 
@@ -66,7 +62,7 @@ all: main-build
 main-build: mpbb_tests
 
 # Tool invocations
-mpbb_tests: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL_DEPS)
+mpbb_tests: $(OBJS) $(USER_OBJS) makefile $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
 	g++  -o "mpbb_tests" $(OBJS) $(USER_OBJS) $(LIBS)
@@ -75,7 +71,7 @@ mpbb_tests: $(OBJS) $(USER_OBJS) makefile objects.mk $(OPTIONAL_TOOL_DEPS)
 
 # Other Targets
 clean:
-	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) mpbb_tests
+	-$(RM) mpbb_tests
 	-@echo ' '
 
 .PHONY: all clean dependents main-build

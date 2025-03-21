@@ -181,7 +181,7 @@ bool GlobalPlanningHandler::makePlan( const geometry_msgs::PoseStamped start, co
     planner_->setNavArr(m_costmap.getSizeInCellsX(), m_costmap.getSizeInCellsY());
 //ROS_INFO("setting planner costmap \n");
     planner_->setCostmap(m_costmap.getCharMap(), true, mb_allow_unknown);
-//costmap_->saveMap("/home/hankm/catkin_ws/src/frontier_detector/launch/cstmap.dat");
+    m_costmap.saveMap("./costmap_u8.dat");
 
     int map_start[2];
     map_start[0] = mx;
@@ -430,10 +430,10 @@ bool GlobalPlanningHandler::makePlan( const int& tid, const float& fbound, const
     planner_->setStart(map_goal);
     planner_->setGoal(map_start);
 
-    //bool success = planner_->calcNavFnAstar(   );
+    bool success = planner_->calcNavFnAstar(   );
     //bool success = planner_->calcNavFnDijkstra(true);
 
-    bool success = planner_->calcNavFnBoundedAstar( tid, fbound, fendpotential );
+    //bool success = planner_->calcNavFnBoundedAstar( tid, fbound, fendpotential );
     if(!success)
     {
     	//printf("calcNavFnBoundedAstar wasn't successful w/  %f  fendpot \n", fendpotential);

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(mpbb_tests)
+project(global_planner)
 
 #add_compile_options(-std=c++11)
 set (CMAKE_CXX_STANDARD 11)
@@ -33,9 +33,9 @@ include_directories(
 )
 
 
-# build mpbb lib 
-add_library(mpbb SHARED ${SRC_FILES})
-target_link_libraries(mpbb 
+# build myplanner lib 
+add_library(myplanner SHARED ${SRC_FILES})
+target_link_libraries(myplanner 
 
 -dpthread
 ${Boost_LIBRARIES}
@@ -43,13 +43,14 @@ ${OpenCV_LIBS}
 ${EIGEN3_LIBS}
 )
 
-set_target_properties( mpbb PROPERTIES
+set_target_properties( myplanner PROPERTIES
   LIBRARY_OUTPUT_DIRECTORY ${MPBB_PROJ_DIRECTORY}/lib 
 )
 
-add_executable(mpbb_run ${MPBB_PROJ_DIRECTORY}/example/mpbb_run.cpp ${SRC_FILES} ) 
-target_link_libraries( mpbb_run mpbb) 
-set_target_properties( mpbb_run PROPERTIES
+
+add_executable(single_plan_run ${MPBB_PROJ_DIRECTORY}/example/single_plan_run.cpp ${SRC_FILES} ) 
+target_link_libraries( single_plan_run myplanner) 
+set_target_properties( single_plan_run PROPERTIES
   RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 
 
